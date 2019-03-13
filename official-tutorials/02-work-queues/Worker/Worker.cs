@@ -21,6 +21,11 @@ namespace Worker
                         autoDelete: false,
                         arguments: null
                     );
+
+                    //Makes the worker only accept another message if has proccessed the last one.
+                    channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+                    Console.WriteLine(" [*] Waiting for messages");
+
                     var consumer = new EventingBasicConsumer(channel);
                     consumer.Received += (model, ea) =>
                     {
