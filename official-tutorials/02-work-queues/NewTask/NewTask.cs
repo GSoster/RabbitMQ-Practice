@@ -13,8 +13,8 @@ namespace NewTask
                 using (var channel = connection.CreateModel())
                 {
                     channel.QueueDeclare(
-                        queue: "task_queue",
-                        durable: false,
+                        queue: "task_queue_durable",
+                        durable: true,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null
