@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PaymentsAPI.Models;
+using System.Web.Http;
 
 namespace PaymentsAPI.Controllers
 {
     public class DirectCardPaymentController : ControllerBase
     {
-        [HttpGet]
-        public IHttpActionResult MakePayment(CardPayment cardPayment)
+        [HttpPost]
+        public IActionResult MakePayment([FromBody]  CardPayment cardPayment)
         {
             return Ok(cardPayment);
         }

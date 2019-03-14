@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using PaymentsAPI.Models;
-
+using System.Web.Http;
 namespace PaymentsAPI.Controllers
 {
+    [RoutePrefix("")]// 
     public class QueuePurchasePaymentController : ControllerBase
     {
-        [HttpGet]
-        public IHttpActionResult MakePayment(PurchaseOrder purchaseOrder)
+        [HttpPost]
+        public IActionResult MakePayment([FromBody] PurchaseOrder purchaseOrder)
         {
             return Ok(purchaseOrder);
         }

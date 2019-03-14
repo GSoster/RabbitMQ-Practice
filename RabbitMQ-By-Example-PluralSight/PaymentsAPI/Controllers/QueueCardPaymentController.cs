@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using PaymentsAPI.Models;
-
+using System.Web.Http;
 namespace PaymentsAPI.Controllers
 {
     public class QueueCardPaymentController : ControllerBase
     {
-        [HttpGet]
-        public IHttpActionResult MakePayment(CardPayment cardPayment)
+        [HttpPost]
+        public IActionResult MakePayment([FromBody] CardPayment cardPayment)
         {
             return Ok(cardPayment);
         }
