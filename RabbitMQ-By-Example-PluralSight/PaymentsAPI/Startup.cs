@@ -42,7 +42,9 @@ namespace PaymentsAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvc(routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Values}/{action=Index}/{id?}"));
         }
     }
 }

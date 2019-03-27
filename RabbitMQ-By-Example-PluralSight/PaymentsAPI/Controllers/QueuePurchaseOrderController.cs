@@ -3,7 +3,7 @@ using PaymentsAPI.Models;
 using System.Web.Http;
 namespace PaymentsAPI.Controllers
 {
-    [RoutePrefix("")]// 
+    //[RoutePrefix("")]// 
     public class QueuePurchasePaymentController : ControllerBase
     {
         [HttpPost]
